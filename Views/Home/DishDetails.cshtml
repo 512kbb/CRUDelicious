@@ -1,0 +1,17 @@
+@model Dish
+@{
+    ViewData["Title"] = "Details";
+    ViewData["h1"] = @Model.Name;
+}
+
+<div class="text-left">
+    <span style="border-bottom: 1px #000 solid;" class="px-4">@Model.Name by @Model.Chef</span>
+    <p class="my-1" style="font-weight: bold;">@Model.Description</p>
+    <p class="my-1" style="font-weight: bold;">Calories: @Model.Calories</p>
+    <p class="my-1" style="font-weight: bold;">Tastiness: @Model.Tastiness</p>
+
+    <div class="button-group">
+        <a asp-action="DeleteDish" asp-route-dishId="@Model.DishId" class="btn btn-danger">Delete</a>
+        <a asp-action="EditDish" asp-route-dishId="@Model.DishId" class="btn btn-warning">Edit</a>
+    </div>
+</div>
